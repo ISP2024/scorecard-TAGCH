@@ -62,14 +62,9 @@ if __name__ == "__main__":
 
     print("Input 3 scores.")
     for count in range(1, 4):
-        score_str = input(f"input {ordinal(count)} score: ")
-        try:
-            score = float(score_str)
-            scorecard.add_score(score)
-        except ValueError:
-            print("Invalid input, please enter a numeric value.")
-            continue
+        score = input(f"input {ordinal(count)} score: ")
+        scorecard.add_score(float(score))
 
-    print("The average is " + str(scorecard.average()))
+    print("The average is ", str(scorecard.average()))
 
     print_scores(scorecard)
